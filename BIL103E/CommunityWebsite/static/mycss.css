@@ -1,0 +1,63 @@
+body{
+    background-image: url("white.jpg");
+}
+
+body.rusticwoodbody {
+    background-image: url("wood1.jpg");
+}
+
+body.darkbluebody {
+    background-image: url("darkblue.jpg");
+}
+
+dt{
+    padding: 5px;
+    font-size: 20px;
+    border-style: inset;
+    border-color: #FFFF66;
+    font-variant: small-caps;
+    color: #FFFF66;
+    margin-top: 10px;
+    font-weight: bold;
+
+
+}
+
+div{
+    padding: 10px;
+    border: 2px solid;
+    width: 600px ;
+    margin-top: 20px;
+    margin-right: auto ;
+    margin-left: auto;
+    border-color: red;
+}
+
+
+dd{
+    color: #FFFF66;
+    margin-top:10px;
+    font-weight: bold;
+
+}
+
+h1{
+
+    text-align: center;
+    font-variant: small-caps;
+    color: red;
+}
+
+h2{
+    margin-top:10px;
+    text-align: center;
+    color: #87CEFA ;
+}
+
+a{
+    text-align: center;
+    font-variant: small-caps;
+    font-size: 1.3em;
+    color: #FF1493;
+    font-weight: bold;
+}
