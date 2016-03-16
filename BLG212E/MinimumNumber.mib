@@ -1,0 +1,33 @@
+* CAN YILMAZ ALTINÝÐNE - 150130132
+* BÝR DÝZÝDE EN KÜÇÜK SAYIYI BULAN PROGRAM		
+		
+*200 numaralý bellek gözünden 220'ye kadar 33 negatif ve pozitif sayý yüklendi, En küçük: A7
+		BAÞ 	$200
+		VER 	$1,$F9,$15,$FC,$DB,$0,$3D,$F8,$A,$E0,$10,$E3,$B,$FE,$B6,$1B,$FA
+		VER	$2D,$32,$D1,$E9,$18,$EA,$72,$E2,$FB,$21,$5,$A7,$3,$28,$5D,$EF
+		BAÞ 	$300					
+
+BAÞLA		YÜK 	SK, $200			SK'ya verilerin baþlangýç adresi yüklendi
+		SÝL 	A				ACC A'nýn içeriði silindi
+		SÝL 	B				ACC B'nin içeriði silindi
+		YÜK 	A, <SK+00>+1		ACC A'ya 200 numaralý bellek gözü (ilk sayý) yüklendi SK 1 artýrýldý
+
+GERÝ		YÜK 	B, <SK+00>+1		ACC B'ye SK'nýn gösterdiði bellek gözündeki içerik yüklendi SK 1 artýrýldý		
+		KAR 	B,A				ACC B ile ACC A karþýlaþtýrýldý
+		DEK 	KÜÇÜKTÜR			Yeni gelen sayýmýz (B'deki sayý) küçükse program KÜÇÜKTÜR'e dallandý.
+		DAL	KARÞILAÞ			Küçük deðilse SK'nýn 221 olup olmadýðýný anlamak için KARÞILAÞ'a dallandý
+		
+KÜÇÜKTÜR	AKT 	A,B				Küçük sayý A'ya aktarýldý.
+		DAL	KARÞILAÞ			Bitiþe geldiðimizi anlamak için program KARÞILAÞ'a dallandý.
+
+KARÞILAÞ	KAR 	SK, $221			Bellekteki bütün sayýlarý okuyup okumadýðýmýzý anlamak için SK ile $221 karþýlaþtýrýldý 
+		DED 	GERÝ				Eðer daha SK 221 olmadýysa sýradaki sayýyla ACC A'daki sayýyý karþýlaþtýrmak için GERÝ'ye dallandý.
+		DAL 	BÝTÝÞ				Eðer SK 221 gösteriyorsa BÝTÝÞ'e dallandý
+
+BÝTÝÞ		YAZ 	A, <$230>			A'nýn içeriði $230 numaralý bellek gözüne yazýldý.
+		KES					Program bitti.
+
+* SK'nýn gösterdiði bellek alanýndaki veriyi önce B'ye aktarýp sonra SK'yý artýrdýðýmýz için SK'yý 221'le karþýlaþtýrdýk.
+* Son sayýyý da okuduktan sonra SK'nýn içeri 221 olacaktýr.
+
+	
