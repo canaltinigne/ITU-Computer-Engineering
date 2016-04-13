@@ -1,0 +1,16 @@
+* CAN YILMAZ ALTINÝÐNE - 150130132
+* ANAHTARLARLA LED YAKMA
+
+* ÖDEVDE SANKÝ BÝR TANE PÝA'MIZ VARMIÞ VE BUNUN SOLDAN ÝLK DÖRT BÝTÝ LEDLERÝ YAKACAK
+* SAÐDAN ÝLK 4 BÝTÝ ANAHTAR GÖREVÝ GÖRECEK ÞEKÝLDE ÝSTENMÝÞ
+* DOLAYISIYLA ÝSKELE B'NÝN SOLDAN ÝLK 4 BÝTÝNÝ VERÝCÝ VE ÝSKELE A'YI ALICI OLARAK KULLANDIM
+* ÖDEVDE ÝSTENÝLEN ÝSKELE SANKÝ ÝSKELE A'NIN SAÐDAN ÝLK 4 BÝTÝ VE ÝSKELE B'NÝN SOLDAN ÝLK 4 BÝTÝ OLACAK ÞEKÝLDE DÜÞÜNÜLMÜÞTÜR
+
+	BAÞ $300
+BAÞLA	YAZ $00, <YÖNLEN.A>		PÝA A alýcý olarak ayarlandý çünkü anahtarlar PÝA A'nýn giriþine baðlý
+	YAZ $F0, <YÖNLEN.B>		PÝA B'nin soldan ilk 4 biti verici olarak ayarlandý çünkü ledler PÝA B'nin çýkýþlarýna baðlý
+GERÝ	YÜK A, <ÝSKELE.A>			Ýskele PÝA A, ACC A'ya yüklendi	
+	DGS A					Ýlk Sað taraftan ilk 4 bitin konumuna göre soldan ilk 4 ledi yakmak için dgs komutu kullanýldý
+	YAZ A, <ÝSKELE.B>			ACC A, PÝA B iskelesine yüklendi
+	DAL GERÝ
+
