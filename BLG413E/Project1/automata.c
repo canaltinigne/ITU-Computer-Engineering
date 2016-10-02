@@ -12,6 +12,13 @@ int main(int argc, char * argv[]) {
 	int  *arrayOne;
 	int size = 10;
 	int i = 0;
+	int rule_number, generation_number;
+
+	printf("Enter the rule number: ");
+	scanf("%d\n", &rule_number);
+
+	printf("Enter the generation number: ");
+	scanf("%d\n", &generation_number);
 
 	// READING FILE NAME FROM CONSOLE
 	strcpy(filename,argv[1]);
@@ -36,8 +43,8 @@ int main(int argc, char * argv[]) {
 			arrayOne = (int*) realloc(arrayOne, size);
 		}
 	}
-    
-    
+
+
 
 
 	int j;
