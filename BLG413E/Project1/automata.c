@@ -9,7 +9,10 @@ int main(int argc, char * argv[]) {
 	// VARIABLE
 	char filename[20];
 	FILE *fp;
-	int  *arrayOne;
+
+	int  *input_binary_array;
+	char *prev_gen_array, *next_gen_array;
+
 	int size = 10;
 	int i = 0;
 	int rule_number, generation_number;
@@ -24,7 +27,7 @@ int main(int argc, char * argv[]) {
 	strcpy(filename,argv[1]);
 
 	// BINARY STRING
-	arrayOne = (int*) malloc(sizeof(int) * size);
+	input_binary_array = (int*) malloc(sizeof(int) * size);
 
 	if ((fp = fopen(filename, "r")) == NULL) {
 		printf("File not found\n");
@@ -33,25 +36,32 @@ int main(int argc, char * argv[]) {
 
 	// READING BINARY STRING
 	while(1){
-		int res = fscanf(fp, "%d", &arrayOne[i]);
+		int res = fscanf(fp, "%d", &input_binary_array[i]);
 		if (res == EOF) {
 			break;
 		}
 		i++;
 		if (i == size) {
 			size *= 2;
-			arrayOne = (int*) realloc(arrayOne, size);
+			input_binary_array = (int*) realloc(input_binary_array, size);
 		}
 	}
 
+	prev_gen_array = (char*) malloc(sizeof(char) * i);
 
-
-
-	int j;
-	for(j = 0; j < i; j++){
-		printf("%d ", arrayOne[j]);
+	for (int j = 0; j < i; j++) {
+		prev_gen_array[j] = input_binary_array[j] ? 'B' : 'W';
 	}
-	printf("\n");
+
+	next_gen_array = (char*) malloc(sizeof(char) * i);
+
+	int size_of_generation = sizeof(prev_gen_array) / sizeof(prev_gen_array[0]);
+
+	while (generation_number--) {
+			generate_next_seq(prev_gen_array, next_gen_array, rule_number, size_of_generation);
+			printf("%s\n", prev_gen_array);
+	}
+
 
 	return 0;
 }
