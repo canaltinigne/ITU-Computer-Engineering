@@ -16,5 +16,6 @@ This repository includes the homeworks and laboratory files that I have coded in
 - BLG 233E - Data Structures & Laboratory
 - BLG 252E - Object Oriented Programming
 - BLG 312E - Computer Operating Systems
+- BLG 335E - Analysis of Algorithms I
 - BLG 413E - System Programming
 - BLG 456E - Robotics
