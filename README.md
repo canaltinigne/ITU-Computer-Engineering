@@ -7,7 +7,6 @@ This repository includes the homeworks and laboratory files that I have coded in
 - You are free to contribute the codes if you see any mistakes or a better solution.
 
 * To execute the Assembly programs in BLG 212E section, you have to download Eşref Adalı's MikBil program from adalı.net.
-* Assembly codes are written in Turkish.
 
 ###The classes:
 
