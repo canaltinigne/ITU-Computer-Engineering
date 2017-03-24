@@ -18,4 +18,5 @@ This repository includes the homeworks and laboratory experiments that I have do
 - BLG 335E - Analysis of Algorithms I
 - BLG 336E - Analysis of Algorithms II
 - BLG 413E - System Programming
+- BLG 454E - Learning From Data
 - BLG 456E - Robotics
